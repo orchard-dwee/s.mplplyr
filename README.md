@@ -7,6 +7,7 @@ I wanted a very easy-to-use application where I can play samples and that's it. 
 Feel free to fork this and play around with it.  However, if you just want the finished release, you can download it from [here](https://dwee.org/about/SmplPlyr.zip).
 
 I also have a little test suite that makes use of the FlaUI project, so if you're a developer who's struggling with getting that working for your project, please feel free to poke around for some tips.[^1]
+
 ---
 
 
