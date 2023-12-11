@@ -17,6 +17,7 @@ namespace SmplPlyr
             var directories = Directory.GetDirectories(Application.StartupPath + "\\Samples");
             foreach (var directory in directories)
             {
+                // if files found in Samples directory, add filled-out buttons to layout
                 var directoryInfo = new DirectoryInfo(directory);
                 var files = directoryInfo.EnumerateFiles();
                 if (!files.Any())
@@ -55,6 +56,7 @@ namespace SmplPlyr
             {
                 var buttCtrl = (BigPlayButton)ctrl;
                 var buttCtrlChk = buttCtrl.GetCheckBox();
+                //if play button doesn't contain search text, hide it
                 buttCtrl.Visible = buttCtrlChk.Text.ToLower().IndexOf(typedText) >= 0;
             }
         }

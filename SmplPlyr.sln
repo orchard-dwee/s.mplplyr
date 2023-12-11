@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmplPlyr", "SmplPlyr\SmplPlyr.csproj", "{3EB2D41D-DE89-413B-BBFD-5F937BF5051C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{0878ACD4-6E4C-4DF2-B435-78CF08A36A71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{0878ACD4-6E4C-4DF2-B435-78CF08A36A71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,7 +20,6 @@ Global
 		{0878ACD4-6E4C-4DF2-B435-78CF08A36A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0878ACD4-6E4C-4DF2-B435-78CF08A36A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0878ACD4-6E4C-4DF2-B435-78CF08A36A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0878ACD4-6E4C-4DF2-B435-78CF08A36A71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

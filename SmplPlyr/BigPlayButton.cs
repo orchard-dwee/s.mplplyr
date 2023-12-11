@@ -40,6 +40,7 @@ namespace SmplPlyr
             }
             if (chk.CheckState == CheckState.Checked)
             {
+                //if button is filled out, play it, otherwise open file upload dialog
                 if (string.IsNullOrEmpty(chk.Text))
                 {
                     openFileDialog1.Filter = "MP3 files (*.mp3)|*.mp3";
@@ -81,6 +82,7 @@ namespace SmplPlyr
 
         private static void Wplayer_PlayStateChange(int newState, CheckBox chk)
         {
+            //when clip is done playing, uncheck the button to show the user it's done
             if (newState == (int)WMPLib.WMPPlayState.wmppsMediaEnded)
             {
                 chk.Checked = false;
@@ -89,6 +91,7 @@ namespace SmplPlyr
 
         private void ResetToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //right-click reset to clear the play button
             var menuItem = sender as ToolStripItem;
             if (menuItem != null)
             {
