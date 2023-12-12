@@ -35,7 +35,7 @@ The "Search" text field up top filters the buttons by their text for your conven
 
 ![Example Six](https://dwee.org/img/smplplyr6.jpg)
 
-To reset a button, just right-click on it.
+I wanted the UI to be as simple as possible but I knew I had to have a way to clear a button, so I added a right-click event.  I thought this was a good way to add this functionality without it getting accidentally triggered by a clumsy hand gesture.  To clear the button, right click on the button and select Reset.
 
 ![Example Seven](https://dwee.org/img/smplplyr7.jpg)
 
