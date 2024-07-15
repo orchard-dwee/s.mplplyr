@@ -31,7 +31,7 @@ When you click the button now, the file will play.  The button will turn green w
 
 ![Example Five](https://dwee.org/img/smplplyr5.jpg?)
 
-The "Search" text field up top filters the buttons by their text for your convenience.
+The "Search" text field up top filters the buttons by their text so you can find the sounds you want without having to scroll like a maniac.
 
 ![Example Six](https://dwee.org/img/smplplyr6.jpg?)
 
