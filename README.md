@@ -15,7 +15,7 @@ This will be quick.  When you start up the application, you're presented with a 
 
 ![Example One](https://dwee.org/img/smplplyr1.jpg?)
 
-Click on the + button up in the upper-left corner to add a player button.  You can add as many as you like.  The - button removes buttons.
+Click on the [+] button up in the upper-left corner to add a player button.  You can add as many as you like.  Likewise, the [-] button removes buttons.
 
 ![Example Two](https://dwee.org/img/smplplyr2.jpg?)
 
