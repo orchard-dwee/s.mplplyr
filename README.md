@@ -41,4 +41,4 @@ I wanted the UI to be as simple as possible but I knew I had to have a way to cl
 
 And that's it!  Nice and simple.  I hope you enjoy.
 
-[^1]: Grab the FlaUI Inspector.  You'll be glad you did.
+[^1]: If you're messing about with FlaUI you should grab the Inspector.  You'll be glad you did.
