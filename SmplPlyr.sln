@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.4.33205.214
+VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmplPlyr", "SmplPlyr\SmplPlyr.csproj", "{3EB2D41D-DE89-413B-BBFD-5F937BF5051C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmplPlyr", "SmplPlyr\SmplPlyr.csproj", "{797B53A9-9DC3-4DFC-98AA-21A28AC75261}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{0878ACD4-6E4C-4DF2-B435-78CF08A36A71}"
 EndProject
@@ -13,18 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3EB2D41D-DE89-413B-BBFD-5F937BF5051C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EB2D41D-DE89-413B-BBFD-5F937BF5051C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EB2D41D-DE89-413B-BBFD-5F937BF5051C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EB2D41D-DE89-413B-BBFD-5F937BF5051C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{797B53A9-9DC3-4DFC-98AA-21A28AC75261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{797B53A9-9DC3-4DFC-98AA-21A28AC75261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{797B53A9-9DC3-4DFC-98AA-21A28AC75261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{797B53A9-9DC3-4DFC-98AA-21A28AC75261}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0878ACD4-6E4C-4DF2-B435-78CF08A36A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0878ACD4-6E4C-4DF2-B435-78CF08A36A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0878ACD4-6E4C-4DF2-B435-78CF08A36A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0878ACD4-6E4C-4DF2-B435-78CF08A36A71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A2030650-2A4B-4FCD-A4A4-53DFE641A6D9}
+		SolutionGuid = {0CD62653-764E-4B9B-8C41-8D2BEF340188}
 	EndGlobalSection
 EndGlobal

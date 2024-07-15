@@ -28,123 +28,178 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.plusButton = new System.Windows.Forms.Button();
-            this.minusButton = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.searchBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            plusButton = new Button();
+            minusButton = new Button();
+            toolTip1 = new ToolTip(components);
+            label1 = new Label();
+            searchBox = new TextBox();
+            trackBar1 = new TrackBar();
+            fasterButton = new Button();
+            slowerButton = new Button();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            resetSpeedButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 35);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(981, 424);
-            this.flowLayoutPanel1.TabIndex = 2;
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = SystemColors.ControlDark;
+            flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanel1.Location = new Point(11, 75);
+            flowLayoutPanel1.Margin = new Padding(4, 2, 4, 2);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1820, 902);
+            flowLayoutPanel1.TabIndex = 2;
             // 
             // plusButton
             // 
-            this.plusButton.Location = new System.Drawing.Point(44, 6);
-            this.plusButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.plusButton.Name = "plusButton";
-            this.plusButton.Size = new System.Drawing.Size(24, 21);
-            this.plusButton.TabIndex = 1;
-            this.plusButton.Text = "+";
-            this.toolTip1.SetToolTip(this.plusButton, "Add Play Button");
-            this.plusButton.UseVisualStyleBackColor = true;
-            this.plusButton.Click += new System.EventHandler(this.PlusButton_Click);
+            plusButton.Location = new Point(82, 13);
+            plusButton.Margin = new Padding(4, 2, 4, 2);
+            plusButton.Name = "plusButton";
+            plusButton.Size = new Size(45, 45);
+            plusButton.TabIndex = 1;
+            plusButton.Text = "+";
+            toolTip1.SetToolTip(plusButton, "Add Play Button");
+            plusButton.UseVisualStyleBackColor = true;
+            plusButton.Click += PlusButton_Click;
             // 
             // minusButton
             // 
-            this.minusButton.Location = new System.Drawing.Point(6, 6);
-            this.minusButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.minusButton.Name = "minusButton";
-            this.minusButton.Size = new System.Drawing.Size(24, 21);
-            this.minusButton.TabIndex = 0;
-            this.minusButton.Text = "-";
-            this.toolTip1.SetToolTip(this.minusButton, "Remove Play Button");
-            this.minusButton.UseVisualStyleBackColor = true;
-            this.minusButton.Click += new System.EventHandler(this.MinusButton_Click);
+            minusButton.Location = new Point(11, 13);
+            minusButton.Margin = new Padding(4, 2, 4, 2);
+            minusButton.Name = "minusButton";
+            minusButton.Size = new Size(45, 45);
+            minusButton.TabIndex = 0;
+            minusButton.Text = "-";
+            toolTip1.SetToolTip(minusButton, "Remove Play Button");
+            minusButton.UseVisualStyleBackColor = true;
+            minusButton.Click += MinusButton_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 8);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Search:";
-            this.toolTip1.SetToolTip(this.label1, "Filter Play Buttons");
+            label1.AutoSize = true;
+            label1.Location = new Point(807, 17);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(90, 32);
+            label1.TabIndex = 3;
+            label1.Text = "Search:";
+            toolTip1.SetToolTip(label1, "Filter Play Buttons");
             // 
             // searchBox
             // 
-            this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchBox.Location = new System.Drawing.Point(2, 1);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(808, 16);
-            this.searchBox.TabIndex = 4;
-            this.toolTip1.SetToolTip(this.searchBox, "Filter Play Buttons");
-            this.searchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
+            searchBox.BorderStyle = BorderStyle.None;
+            searchBox.Location = new Point(5, 0);
+            searchBox.Margin = new Padding(4, 2, 4, 2);
+            searchBox.Name = "searchBox";
+            searchBox.Size = new Size(919, 32);
+            searchBox.TabIndex = 4;
+            toolTip1.SetToolTip(searchBox, "Filter Play Buttons");
+            searchBox.TextChanged += SearchBox_TextChanged;
+            // 
+            // trackBar1
+            // 
+            trackBar1.AutoSize = false;
+            trackBar1.LargeChange = 1;
+            trackBar1.Location = new Point(178, 13);
+            trackBar1.Maximum = 100;
+            trackBar1.Name = "trackBar1";
+            trackBar1.Size = new Size(424, 50);
+            trackBar1.TabIndex = 7;
+            toolTip1.SetToolTip(trackBar1, "Stutter Interval");
+            trackBar1.Scroll += TrackBar1_Scroll;
+            // 
+            // fasterButton
+            // 
+            fasterButton.Location = new Point(631, 13);
+            fasterButton.Margin = new Padding(4, 2, 4, 2);
+            fasterButton.Name = "fasterButton";
+            fasterButton.Size = new Size(45, 45);
+            fasterButton.TabIndex = 8;
+            fasterButton.Text = "▲";
+            toolTip1.SetToolTip(fasterButton, "Increase Speed");
+            fasterButton.UseVisualStyleBackColor = true;
+            fasterButton.Click += FasterButton_Click;
+            // 
+            // slowerButton
+            // 
+            slowerButton.Location = new Point(695, 13);
+            slowerButton.Margin = new Padding(4, 2, 4, 2);
+            slowerButton.Name = "slowerButton";
+            slowerButton.Size = new Size(45, 45);
+            slowerButton.TabIndex = 9;
+            slowerButton.Text = "▼";
+            toolTip1.SetToolTip(slowerButton, "Decrease Speed");
+            slowerButton.UseVisualStyleBackColor = true;
+            slowerButton.Click += SlowerButton_Click;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.searchBox);
-            this.panel1.Location = new System.Drawing.Point(145, 7);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(843, 21);
-            this.panel1.TabIndex = 5;
+            panel1.BackColor = SystemColors.Window;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(searchBox);
+            panel1.Location = new Point(904, 15);
+            panel1.Margin = new Padding(4, 2, 4, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(927, 40);
+            panel1.TabIndex = 5;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(820, 1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(21, 18);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(1523, 2);
+            pictureBox1.Margin = new Padding(4, 2, 4, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(39, 38);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
+            // resetSpeedButton
+            // 
+            resetSpeedButton.Location = new Point(755, 13);
+            resetSpeedButton.Margin = new Padding(4, 2, 4, 2);
+            resetSpeedButton.Name = "resetSpeedButton";
+            resetSpeedButton.Size = new Size(45, 45);
+            resetSpeedButton.TabIndex = 10;
+            resetSpeedButton.Text = "X";
+            toolTip1.SetToolTip(resetSpeedButton, "Reset Speed");
+            resetSpeedButton.UseVisualStyleBackColor = true;
+            resetSpeedButton.Click += ResetSpeedButton_Click;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 464);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.minusButton);
-            this.Controls.Add(this.plusButton);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.Name = "Form1";
-            this.Text = "S.mple Player";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1844, 990);
+            Controls.Add(resetSpeedButton);
+            Controls.Add(slowerButton);
+            Controls.Add(fasterButton);
+            Controls.Add(trackBar1);
+            Controls.Add(panel1);
+            Controls.Add(label1);
+            Controls.Add(minusButton);
+            Controls.Add(plusButton);
+            Controls.Add(flowLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 2, 4, 2);
+            Name = "Form1";
+            Text = "S.mple Player";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -157,5 +212,9 @@
         private TextBox searchBox;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private TrackBar trackBar1;
+        private Button fasterButton;
+        private Button slowerButton;
+        private Button resetSpeedButton;
     }
 }

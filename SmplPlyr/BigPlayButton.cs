@@ -5,15 +5,104 @@ namespace SmplPlyr
     public partial class BigPlayButton : UserControl
     {
         public WindowsMediaPlayer? Mp3Player { get; set; }
+        public double LoopBegPos { get; set; }
+        public double LoopEndPos { get; set; }
+        private System.Windows.Forms.Timer TmrWmpPlayerPosition { get; set; }
 
-        public BigPlayButton(string name, string text)
+        readonly int playing = 3;
+        readonly int rewind = 5;
+
+        public BigPlayButton(string name, string text, string path)
         {
             InitializeComponent();
+            TmrWmpPlayerPosition = new System.Windows.Forms.Timer { Interval = 1 };
+            TmrWmpPlayerPosition.Tick += new EventHandler(TmrWmpPlayerPosition_Tick);
             Name = name;
             if (!string.IsNullOrEmpty(text))
             {
-                var fileToPlay = string.Format("{0}\\Samples\\{2}\\{1}", Application.StartupPath, text, Name);
+                var fileToPlay = string.Format("{0}Samples\\{2}\\{1}", path, text, Name);
                 AssignClipToPlayButton(text, fileToPlay);
+            }
+        }
+
+        private void TmrWmpPlayerPosition_Tick(object sender, EventArgs e)
+        {
+            if (Mp3Player == null)
+            {
+                return;
+            }
+            if (Mp3Player.controls.currentPosition < LoopEndPos) {
+                return;
+            };
+            // if this is reached, then trackbar has moved and the position needs to be set
+            Mp3Player.controls.currentPosition = LoopBegPos;
+            TmrWmpPlayerPosition.Stop();
+            TmrWmpPlayerPosition.Start();
+        }
+
+        private void StartWmpPlayerTimer()
+        {
+            TmrWmpPlayerPosition.Enabled = true;
+            TmrWmpPlayerPosition.Start();
+        }
+
+        internal void ChangeSpeed(SpeedValue speedVal)
+        {
+            if (Mp3Player == null)
+            {
+                return;
+            }
+            if ((int) Mp3Player.playState >= playing && (int)Mp3Player.playState <= rewind)
+            {
+                if (speedVal == SpeedValue.Faster)
+                {
+                    ++Mp3Player.settings.rate;
+                }
+                else if (speedVal == SpeedValue.Reset)
+                {
+                    Mp3Player.settings.rate = 1;
+                }
+                else
+                {
+                    if (Mp3Player.settings.rate > 1)
+                    {
+                        --Mp3Player.settings.rate;
+                    }
+                }
+            }
+        }
+
+        internal void Stutter(double pos)
+        {
+            if (Mp3Player == null)
+            {
+                return;
+            }
+            if ((int)Mp3Player.playState >= playing && (int)Mp3Player.playState <= rewind)
+            {
+                //reset track so it play normally when trackbar is all the way to the left
+                if (pos == 0)
+                {
+                    LoopBegPos = 0;
+                    LoopEndPos = 0;
+                    TmrWmpPlayerPosition.Stop();
+                }
+                else
+                {
+                    // set loop based on position of trackbar
+                    var divPos = (100 - pos) / 100;
+                    if (LoopEndPos == 0)
+                    {
+                        LoopEndPos = Mp3Player.controls.currentPosition;
+                        Mp3Player.controls.currentPosition -= divPos;
+                        LoopBegPos = Mp3Player.controls.currentPosition;
+                    }
+                    else
+                    {
+                        LoopEndPos = LoopBegPos + divPos;
+                    }
+                    StartWmpPlayerTimer();
+                }
             }
         }
 
@@ -26,7 +115,8 @@ namespace SmplPlyr
         {
             checkBox1.Text = text;
             Mp3Player = new WindowsMediaPlayer();
-            Mp3Player.PlayStateChange += new _WMPOCXEvents_PlayStateChangeEventHandler((s) => Wplayer_PlayStateChange(s, checkBox1));
+            Mp3Player.PlayStateChange += new _WMPOCXEvents_PlayStateChangeEventHandler(
+                (state) => Wplayer_PlayStateChange(state, checkBox1));
             Mp3Player.URL = fileToPlay;
             Mp3Player.controls.stop();
         }
@@ -86,7 +176,7 @@ namespace SmplPlyr
             if (newState == (int)WMPLib.WMPPlayState.wmppsMediaEnded)
             {
                 chk.Checked = false;
-            }
+            } 
         }
 
         private void ResetToolStripMenuItem_Click(object sender, EventArgs e)

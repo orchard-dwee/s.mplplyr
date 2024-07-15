@@ -25,7 +25,7 @@ namespace SmplPlyr
                     continue;
                 }
                 var fileName = files.Select(f => f.Name).First();
-                var button = new BigPlayButton(directoryInfo.Name, fileName);
+                var button = new BigPlayButton(directoryInfo.Name, fileName, Application.StartupPath);
                 flowLayoutPanel1.Controls.Add(button);
             }
             searchBox.Select();
@@ -34,15 +34,16 @@ namespace SmplPlyr
         private void PlusButton_Click(object sender, EventArgs e)
         {
             var numOfControls = flowLayoutPanel1.Controls.Count;
-            var button = new BigPlayButton(string.Format("PlayButton_{0}", numOfControls), string.Empty);
+            var button = new BigPlayButton(string.Format("PlayButton_{0}", numOfControls), string.Empty, Application.StartupPath);
             flowLayoutPanel1.Controls.Add(button);
         }
 
         private void MinusButton_Click(object sender, EventArgs e)
         {
             var numOfControls = flowLayoutPanel1.Controls.Count;
-            if (numOfControls == 0) { 
-                return; 
+            if (numOfControls == 0)
+            {
+                return;
             }
             flowLayoutPanel1.Controls.RemoveAt(numOfControls - 1);
         }
@@ -52,12 +53,53 @@ namespace SmplPlyr
             var txtBox = (TextBox)sender;
             var typedText = txtBox.Text;
             var controlCol = flowLayoutPanel1.Controls;
-            foreach(var ctrl in controlCol)
+            foreach (var ctrl in controlCol)
             {
                 var buttCtrl = (BigPlayButton)ctrl;
                 var buttCtrlChk = buttCtrl.GetCheckBox();
                 //if play button doesn't contain search text, hide it
                 buttCtrl.Visible = buttCtrlChk.Text.ToLower().IndexOf(typedText) >= 0;
+            }
+        }
+
+        private void TrackBar1_Scroll(object sender, EventArgs e)
+        {
+            var tb = (TrackBar)sender;
+            var controlCol = flowLayoutPanel1.Controls;
+            foreach (var ctrl in controlCol)
+            {
+                var buttCtrl = (BigPlayButton)ctrl;
+                buttCtrl.Stutter(tb.Value);
+            }
+        }
+
+        private void FasterButton_Click(object sender, EventArgs e)
+        {
+            var controlCol = flowLayoutPanel1.Controls;
+            foreach (var ctrl in controlCol)
+            {
+                var buttCtrl = (BigPlayButton)ctrl;
+                buttCtrl.ChangeSpeed(SpeedValue.Faster);
+            }
+        }
+
+        private void SlowerButton_Click(object sender, EventArgs e)
+        {
+            var controlCol = flowLayoutPanel1.Controls;
+            foreach (var ctrl in controlCol)
+            {
+                var buttCtrl = (BigPlayButton)ctrl;
+                buttCtrl.ChangeSpeed(SpeedValue.Slower);
+            }
+        }
+
+        private void ResetSpeedButton_Click(object sender, EventArgs e)
+        {
+            var controlCol = flowLayoutPanel1.Controls;
+            foreach (var ctrl in controlCol)
+            {
+                var buttCtrl = (BigPlayButton)ctrl;
+                buttCtrl.ChangeSpeed(SpeedValue.Reset);
             }
         }
     }
