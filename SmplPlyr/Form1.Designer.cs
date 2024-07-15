@@ -39,9 +39,9 @@
             trackBar1 = new TrackBar();
             fasterButton = new Button();
             slowerButton = new Button();
+            resetSpeedButton = new Button();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            resetSpeedButton = new Button();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -141,6 +141,18 @@
             slowerButton.UseVisualStyleBackColor = true;
             slowerButton.Click += SlowerButton_Click;
             // 
+            // resetSpeedButton
+            // 
+            resetSpeedButton.Location = new Point(755, 13);
+            resetSpeedButton.Margin = new Padding(4, 2, 4, 2);
+            resetSpeedButton.Name = "resetSpeedButton";
+            resetSpeedButton.Size = new Size(45, 45);
+            resetSpeedButton.TabIndex = 10;
+            resetSpeedButton.Text = "X";
+            toolTip1.SetToolTip(resetSpeedButton, "Reset Speed");
+            resetSpeedButton.UseVisualStyleBackColor = true;
+            resetSpeedButton.Click += ResetSpeedButton_Click;
+            // 
             // panel1
             // 
             panel1.BackColor = SystemColors.Window;
@@ -156,24 +168,12 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1523, 2);
+            pictureBox1.Location = new Point(900, 10);
             pictureBox1.Margin = new Padding(4, 2, 4, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(39, 38);
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
-            // 
-            // resetSpeedButton
-            // 
-            resetSpeedButton.Location = new Point(755, 13);
-            resetSpeedButton.Margin = new Padding(4, 2, 4, 2);
-            resetSpeedButton.Name = "resetSpeedButton";
-            resetSpeedButton.Size = new Size(45, 45);
-            resetSpeedButton.TabIndex = 10;
-            resetSpeedButton.Text = "X";
-            toolTip1.SetToolTip(resetSpeedButton, "Reset Speed");
-            resetSpeedButton.UseVisualStyleBackColor = true;
-            resetSpeedButton.Click += ResetSpeedButton_Click;
             // 
             // Form1
             // 
