@@ -4,7 +4,7 @@ A very no-frills mp3 trigger that I use to play samples when DJ'ing.[^1]
 ---
 I wanted a very easy-to-use application where I can play samples without any distracting controls to get in my way, similar to a drum pad.  I just decided to roll my own for the fun of it.  Naming something is always a challenge so I went with S.mplPlyr, because it seems to be a popular thing to leave out vowels.  I noticed that "Smpl" could be read as "Simple" or "Sample", and since both words do describe this, I went with the "." as a wildcard.
 
-Feel free to fork this and play around with it.  However, if you just want the finished release, you can download it from [here](https://dwee.org/about/SmplPlyr.zip).
+Feel free to fork this and play around with it.  However, if you just want the finished release, [here you go](https://dwee.org/about/SmplPlyr.zip).
 
 I also have a little test suite that makes use of the FlaUI project, so if you're a developer who's struggling with getting that working for your project, please feel free to poke around for some tips.[^2]
 
